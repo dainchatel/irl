@@ -10,4 +10,18 @@ router.get('/', authHelpers.loginRequired, (req, res, next) => {
   });
 });
 
+router.get('/messages', (req, res, next) => {
+  res.render('user/messages', {
+    user: req.user.dataValues
+  });
+});
+
+router.get('/composemessage', (req, res, next) => {
+  res.render('user/composemessage', {
+    fromUser: req.user.dataValues,
+    toUser: ''
+  });
+});
+
+
 module.exports = router;
