@@ -24,4 +24,20 @@ router.get('/composemessage', (req, res, next) => {
 });
 
 
+// router.post('/', authHelpers.loginRequired,(req,res,next) => {
+//   res.render('user/user', {
+//     user:req.user.dataValues
+//   });
+// });
+
+// router.put('/', function(req, res, next) {
+//   models.User.update({
+//     videoURL: req.body.videoURL,
+//   })
+//   .then(function() {
+//     res.redirect('/');
+//   });
+// });
+
+
 module.exports = router;

@@ -1,0 +1,22 @@
+<% include ../partials/head.ejs %> <!--- using head.ejs page from partials -->
+<title>Upload</title>
+</head>
+  <body>
+    <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
+    <main>
+      <h4>Let's get started!</h4>
+      <p>You'll need an 11 second video</p>
+      <p>Make sure there is good lighting in the room</p>
+      <p>Be centered in the video. No Angles.</p>
+      <p>Most important. Be yourself!</p>
+      <p>Upload an HD video from YouTube or Vimeo</p>
+      <div class="row">
+        <form action="<%= '/auth/register/' + user.id + '?_method=PUT' %>" method="POST">
+          <input type="text" name="videoURL" placeholder="https://youtube.com/your-video-link" />
+          <button type='submit'>submit</button>
+        </form>
+      </div>
+    </main>
+    <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
+  </body>
+</html>

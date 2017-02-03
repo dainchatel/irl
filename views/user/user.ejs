@@ -1,12 +1,11 @@
 
 
 <% include ../partials/head.ejs %> <!--- using head.ejs page from partials -->
+
+<title> Home </title>
+
+</head>
   <body>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main>
         <div class="collection">
@@ -16,6 +15,7 @@
          <a href="" class="collection-item center"><p><%= user.email %></p></a>
         <a href="" class="collection-item center"> <p><%= user.dob %></p></a>
         <a href="/auth/logout" class="collection-item center">LOG OUT</a> <!--- on click we can logout and redirect to a main page-->
+
       </div>
 
 

@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 const authHelpers = require('../auth/auth-helpers');
 const passport = require('../auth/local');
+const methodOverride = require('method-override');
+const models = require('../db/models/index');
 
-router.get('/register', authHelpers.loginRedirect, (req, res)=> {
+router.get('/register', authHelpers.loginRedirect, (req, res) => {
   res.render('auth/register');
 });
 
@@ -13,12 +15,36 @@ router.post('/register', (req, res, next)  => {
   .then((user) => {
     req.login(user, (err) => {
       if (err) return next(err);
-
-      res.redirect('/user');
+      res.render('auth/upload', {user: user});
     });
   })
   .catch((err) => { res.status(500).json({ status: 'error' }); });
 });
+
+router.put('/register/:id', function(req, res, next) {
+  //console.log(req.user.id, req.body.videoURL)
+  models.User.update({
+
+    videoURL: req.body.videoURL,
+
+  }, { where: { id: req.params.id } } )
+  .then(function() {
+    console.log(req.body.videoURL)
+    res.redirect('/user');
+  });
+});
+
+// router.post('/register', (req, res, next)  => {
+//   authHelpers.createUser(req, res)
+//   .then((user) => {
+//     req.login(user, (err) => {
+//       if (err) return next(err);
+
+//       res.redirect('/user');
+//     });
+//   })
+//   .catch((err) => { res.status(500).json({ status: 'error' }); });
+// });
 
 router.get('/login', authHelpers.loginRedirect, (req, res)=> {
   res.render('auth/login');
