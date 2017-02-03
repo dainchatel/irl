@@ -16,8 +16,8 @@
       <p>Most important. Be yourself!</p>
       <p>Upload an HD video from YouTube or Vimeo</p>
       <div class="row">
-        <form action="<%= '/register' + '?_method=PUT' %>" method="POST">
-          <input value="<%= user.videoURL %>" type="text" name="videoURL" placeholder="https://youtube.com/your-video-link">
+        <form action="<%= '/auth/register/' + user.id + '?_method=PUT' %>" method="POST">
+          <input type="text" name="videoURL" placeholder="https://youtube.com/your-video-link" />
           <button type='submit'>submit</button>
         </form>
       </div>
