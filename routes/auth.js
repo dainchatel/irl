@@ -13,12 +13,23 @@ router.post('/register', (req, res, next)  => {
   .then((user) => {
     req.login(user, (err) => {
       if (err) return next(err);
-
-      res.redirect('/user');
+      res.render('auth/upload');
     });
   })
   .catch((err) => { res.status(500).json({ status: 'error' }); });
 });
+
+// router.post('/register', (req, res, next)  => {
+//   authHelpers.createUser(req, res)
+//   .then((user) => {
+//     req.login(user, (err) => {
+//       if (err) return next(err);
+
+//       res.redirect('/user');
+//     });
+//   })
+//   .catch((err) => { res.status(500).json({ status: 'error' }); });
+// });
 
 router.get('/login', authHelpers.loginRedirect, (req, res)=> {
   res.render('auth/login');
