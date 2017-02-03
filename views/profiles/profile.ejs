@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <%= user.firstName %> </title>
+    <% include ../partials/head.ejs %>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+<div class="row">
+        <div class="col s10 offset-s1">
+          <div class="card blue-grey lighten-1">
+            <div class="card-content white-text">
+              <span class="card-title"><h3><%= user.firstName %></h3></span>
+              <p><%= user.firstName %></p>
+            </div>
+            <div class="card-action">
+            <div class="row">
+
+
+                <button class="btn" type="submit">Delete</button>
+              </form>
+              <a href="/"><button class="btn">Back</button></a>
+              <a href="/profiles"><button class="btn">Profiles</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

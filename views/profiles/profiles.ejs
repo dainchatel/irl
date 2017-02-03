@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <%= title %> </title>
+    <% include ../partials/head.ejs %>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="row">
+      <h1 class="col s4 offset-s1"><%= title %></h1>
+    </div>
+    <div class="collection">
+    <% users.forEach(function(user) { %>
+      <div class="collection-item center blue-grey lighten-1">
+        <span><a class="white-text" href="<%= '/profiles/' + user.id %>"><%= user.firstName %></a></span>
+      </div>
+    <% }) %>
+    </div>
+
+  </body>
+</html>
