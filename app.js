@@ -4,11 +4,23 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
 require('dotenv').config();
+var methodOverride = require('method-override');
+var passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+var bcrypt = require('bcryptjs');
+// var index = require('./routes/index');
+// var users = require('./routes/user');
+
+var directors = require('./routes/directors');
+var methodOverride = require('method-override');
+const session = require('express-session');
+// const authRoutes = require('./routes/auth.js');
+// const userRoutes = require('./routes/user.js');
+
+
 var app = express();
+app.use(methodOverride('_method'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
