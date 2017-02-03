@@ -8,11 +8,6 @@ router.get('/register', authHelpers.loginRedirect, (req, res)=> {
   res.render('auth/register');
 });
 
-function loginRedirect(req, res, next) {
-  if (req.user) res.redirect('/user');
-
-  return next();
-}
 
 router.post('/register', (req, res, next)  => {
   authHelpers.createUser(req, res)
