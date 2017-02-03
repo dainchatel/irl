@@ -15,6 +15,9 @@
         <input type="text" name="videoURL" value="<%= user.videoURL %>" placeholder="<%= user.videoURL %>"/>
         <button class="btn" type='submit'>Save</button>
       </form>
+      <form action='<%= `/user/edit/${user.id}?_method=DELETE` %>' method='POST'>
+        <button class="btn" type="submit">Delete</button>
+      </form>
     </main>
     <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
   </body>

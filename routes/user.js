@@ -32,6 +32,14 @@ router.put('/edit/:id', function(req, res, next) {
   });
 });
 
+router.delete('/edit/:id', function(req, res, next) {
+  models.User.destroy({
+    where: {id: req.params.id}
+  }).then(function(){
+    res.redirect('/../')
+  });
+});
+
 
 
 module.exports = router;
