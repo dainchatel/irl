@@ -1,0 +1,32 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+<% include ../partials/head.ejs %> <!--- using head.ejs page from partials -->
+  <body>
+    <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
+    <main>
+      <div class="container">
+        <form action="/auth/login" method="post">
+          <div>
+            <label>Username:</label>
+            <input type="text" name="username"/>
+          </div>
+          <div>
+            <label>Password:</label>
+            <input type="password" name="password"/>
+          </div>
+          <div>
+           <a class="waves-effect waves-light btn">
+            <input type="submit" value="Log In"/>
+            </a>
+          </div>
+        </form>
+      </div>
+    </main>
+    <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
+  </body>
+</html>
