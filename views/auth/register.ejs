@@ -1,32 +1,50 @@
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+<% include ../partials/head.ejs %>
+  <body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-
-<% include ../partials/head.ejs %> <!--- using head.ejs page from partials -->
-  <body>
-    <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
+    <% include ../partials/header.ejs %>
     <main>
       <div class="container">
-        <form action="/auth/login" method="post">
-          <div>
+        <div class="row">
+
+        <form action="/auth/register" method="post">
+          <div class="col s6">
             <label>Username:</label>
             <input type="text" name="username"/>
           </div>
-          <div>
+           <div class="col s6">
             <label>Password:</label>
             <input type="password" name="password"/>
           </div>
-          <div>
+          <div class="col s6">
+            <label>First Name:</label>
+            <input type="text" name="firstName"/>
+          </div>
+          <div class="col s6">
+            <label>Last Name:</label>
+            <input type="text" name="lastName"/>
+          </div>
+           <div class="col s6">
+            <label>Email:</label>
+            <input type="text" name="email"/>
+          </div>
+           <div class="col s6">
+            <label>Date of Birth:</label>
+            <input type="date" name="dob"/>
+          </div>
            <a class="waves-effect waves-light btn">
-            <input type="submit" value="Log In"/>
+            <input type="submit" value="Register"/>
             </a>
           </div>
         </form>
+        </div>
       </div>
     </main>
-    <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
+    <% include ../partials/footer.ejs %>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
 </html>
