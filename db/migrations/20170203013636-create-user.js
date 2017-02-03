@@ -34,9 +34,9 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
+      }
       videoURL: {
-        allowNull: true,
+         allowNull: true,
         type: Sequelize.STRING(250)
       }
     });

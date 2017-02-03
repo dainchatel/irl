@@ -3,6 +3,7 @@ const router = express.Router();
 const authHelpers = require('../auth/auth-helpers');
 const passport = require('../auth/local');
 const methodOverride = require('method-override');
+const models = require('../db/models/index');
 
 router.get('/register', authHelpers.loginRedirect, (req, res) => {
   res.render('auth/register');
@@ -20,12 +21,15 @@ router.post('/register', (req, res, next)  => {
   .catch((err) => { res.status(500).json({ status: 'error' }); });
 });
 
-router.put('/register', function(req, res, next) {
+router.put('/register/:id', function(req, res, next) {
   //console.log(req.user.id, req.body.videoURL)
   models.User.update({
+
     videoURL: req.body.videoURL,
-  }, { where: { id: req.User.id } } )
+
+  }, { where: { id: req.params.id } } )
   .then(function() {
+    console.log(req.body.videoURL)
     res.redirect('/user');
   });
 });
