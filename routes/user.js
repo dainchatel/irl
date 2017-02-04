@@ -18,6 +18,12 @@ router.get('/edit', function(req,res,next) {
   });
 });
 
+router.get('/edit/preferences/:id', (req, res,next) => {
+  res.render('user/editPreferences', {
+    user: req.user.dataValues
+  });
+});
+
 router.get('/messages', (req, res, next) => {
   res.render('user/messages', {
 
