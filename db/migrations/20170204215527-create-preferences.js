@@ -9,13 +9,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       user_id: {
+        allowNull: false,
+        unique: true,
         type: Sequelize.INTEGER
       },
       gender: {
         type: Sequelize.STRING(10)
-      },
-      zip: {
-        type: Sequelize.INTEGER
       },
       distance: {
         type: Sequelize.INTEGER

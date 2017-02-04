@@ -26,9 +26,8 @@ function createUser(req, res) {
 
 function createUserPref(req, res) {
   return models.Preferences.create({
-    user_id: req.body.userId,
+    user_id: req.params.id,
     gender: req.body.gender,
-    zip: req.body.zip,
     distance: req.body.distance,
     age_min: req.body.ageMin,
     age_max: req.body.ageMax

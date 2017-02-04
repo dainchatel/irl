@@ -57,6 +57,14 @@ router.get('/preferences/:id', function(req, res, next) {
   });
 });
 
+router.post('/preferences/:id', (req, res, next)  => {
+  authHelpers.createUserPref(req, res)
+  .then(() => {
+      res.redirect('../../user');
+  })
+  .catch((err) => { res.status(500).json({ status: 'error' }); });
+})
+
 // router.put('/userInfo/:id', function(req, res, next) {
 //   models.User.update({
 //     age: req.body.age,
