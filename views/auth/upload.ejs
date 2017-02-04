@@ -13,7 +13,7 @@
       <div class="row">
         <form action="<%= '/auth/register/' + user.id + '?_method=PUT' %>" method="POST">
           <input class="col s6" type="number" name="age" min="18" max="100" placeholder="age" required />
-          <input class="col s6" type="number" name="zipcode" placeholder="zipcode" required />
+          <input class="col s6" type="number" name="zipcode" data-length="5" placeholder="zipcode" required />
           <div class="input-field col s12">
           <h5>Select your gender</h5>
           <p class="col s2">
@@ -28,7 +28,7 @@
             <input name="gender" type="radio" value="nb" id="nb" />
             <label for="nb">Non-binary</label>
           </p>
-
+          <br>
           </div>
           <input type="text" name="videoURL" placeholder="https://youtube.com/your-video-link" />
           <button type='submit'>submit</button>
