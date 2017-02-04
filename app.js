@@ -11,6 +11,9 @@ const LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcryptjs');
 var index = require('./routes/index');
 var users = require('./routes/user');
+var messages = require('./routes/messages');
+var composemessage = require('./routes/composemessage');
+
 var profiles = require('./routes/profiles');
 var methodOverride = require('method-override');
 const session = require('express-session');
@@ -50,7 +53,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+
+app.use('/messages', messages);
+app.use('/composemessage', composemessage)
+
+
 app.use('/profiles', profiles);
+
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
 

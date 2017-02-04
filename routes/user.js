@@ -11,11 +11,20 @@ router.get('/', authHelpers.loginRequired, (req, res, next) => {
   });
 });
 
+
 router.get('/edit', function(req,res,next) {
   res.render('user/edit', {
+   user: req.user.dataValues
+  });
+});
+
+router.get('/messages', (req, res, next) => {
+  res.render('user/messages', {
+
     user: req.user.dataValues
   });
 });
+
 
 router.put('/edit/:id', function(req, res, next) {
   models.User.update({
@@ -40,6 +49,11 @@ router.delete('/edit/:id', function(req, res, next) {
   });
 });
 
-
+router.get('/composemessage', (req, res, next) => {
+  res.render('user/composemessage', {
+    fromUser: req.user.dataValues,
+    toUser: ''
+  });
+});
 
 module.exports = router;
