@@ -4,21 +4,40 @@
 </head>
   <body>
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
-    <main>
+    <main class="container">
 
-      <form action="<%= '/user/edit/' + user.id + '?_method=PUT' %>" method="POST">
+      <form class="row" action="<%= '/user/edit/' + user.id + '?_method=PUT' %>" method="POST">
         <input type="text" name="username" value="<%= user.username %>" placeholder="<%= user.username %>"/>
         <input type="text" name="firstName" value="<%= user.firstName %>" placeholder="<%= user.firstName %>"/>
         <input type="text" name="lastName" value="<%= user.lastName %>" placeholder="<%= user.lastName %>"/>
         <input type="text" name="email" value="<%= user.email %>" placeholder="<%= user.email %>"/>
         <input type="text" name="dob" value="<%= user.dob %>" placeholder="<%= user.dob %>"/>
+        <input type="number" name="age" value="<%= user.age %>" placeholder="<%= user.age %>"/>
+        <input type="number" name="zipcode" value="<%= user.zipcode %>" placeholder="<%= user.zipcode %>"/>
+        <p class="col s2">
+            <input name="gender" type="radio" value="m" id="m" />
+            <label for="m">Male</label>
+          </p>
+          <p class="col s2">
+            <input name="gender" type="radio" value="f" id="f" />
+            <label for="f">Female</label>
+          </p>
+          <p class="col s2">
+            <input name="gender" type="radio" value="nb" id="nb" />
+            <label for="nb">Non-binary</label>
+          </p>
         <input type="text" name="videoURL" value="<%= user.videoURL %>" placeholder="<%= user.videoURL %>"/>
-        <button class="btn" type='submit'>Save</button>
+      <button class="btn" type='submit'>Save</button>
       </form>
-      <form action='<%= `/user/edit/${user.id}?_method=DELETE` %>' method='POST'>
+      <form class="alert" action='<%= `/user/edit/${user.id}?_method=DELETE` %>' method='POST'>
         <button class="btn" type="submit">Delete</button>
       </form>
     </main>
     <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
+  <script
+  src="http://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="../javascripts/editUser.js"></script>
   </body>
 </html>
