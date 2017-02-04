@@ -7,6 +7,9 @@ module.exports = function(sequelize, DataTypes) {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     dob: DataTypes.DATE,
+    age: DataTypes.INTEGER,
+    zipcode: DataTypes.INTEGER,
+    gender: DataTypes.STRING(32),
     videoURL: DataTypes.STRING(250)
   }, {
     classMethods: {
