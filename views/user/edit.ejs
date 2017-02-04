@@ -1,0 +1,24 @@
+
+<% include ../partials/head.ejs %> <!--- using head.ejs page from partials -->
+<title> Edit <%=user.firstName %> </title>
+</head>
+  <body>
+    <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
+    <main>
+
+      <form action="<%= '/user/edit/' + user.id + '?_method=PUT' %>" method="POST">
+        <input type="text" name="username" value="<%= user.username %>" placeholder="<%= user.username %>"/>
+        <input type="text" name="firstName" value="<%= user.firstName %>" placeholder="<%= user.firstName %>"/>
+        <input type="text" name="lastName" value="<%= user.lastName %>" placeholder="<%= user.lastName %>"/>
+        <input type="text" name="email" value="<%= user.email %>" placeholder="<%= user.email %>"/>
+        <input type="text" name="dob" value="<%= user.dob %>" placeholder="<%= user.dob %>"/>
+        <input type="text" name="videoURL" value="<%= user.videoURL %>" placeholder="<%= user.videoURL %>"/>
+        <button class="btn" type='submit'>Save</button>
+      </form>
+      <form action='<%= `/user/edit/${user.id}?_method=DELETE` %>' method='POST'>
+        <button class="btn" type="submit">Delete</button>
+      </form>
+    </main>
+    <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
+  </body>
+</html>
