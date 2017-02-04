@@ -10,7 +10,7 @@
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main>
       <div class="container">
-        <form action="" method="post">
+        <form action="<%='/composemessage/' + user.id %>" method="POST">
           <div>
             <label>Message:</label>
             <input type="text" name="content"/>
