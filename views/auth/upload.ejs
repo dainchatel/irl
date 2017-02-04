@@ -4,35 +4,17 @@
   <body>
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main class="container">
-      <h4>Let's get started!</h4>
-        <li>You'll need an 11 second video</li>
-        <li>Make sure there is good lighting in the room</li>
-        <li>Be centered in the video. No Angles.</li>
-        <li>Most important. Be yourself!</li>
-        <li>Upload an HD video from YouTube or Vimeo</li>
       <div class="row">
-        <form action="<%= '/auth/register/' + user.id + '?_method=PUT' %>" method="POST">
-          <input class="col s6" type="number" name="age" min="18" max="100" placeholder="age" required />
-          <input class="col s6" type="number" name="zipcode" data-length="5" placeholder="zipcode" required />
-          <div class="input-field col s12">
-          <h5>Select your gender</h5>
-          <p class="col s2">
-            <input name="gender" type="radio" value="m" id="m" />
-            <label for="m">Male</label>
-          </p>
-          <p class="col s2">
-            <input name="gender" type="radio" value="f" id="f" />
-            <label for="f">Female</label>
-          </p>
-          <p class="col s2">
-            <input name="gender" type="radio" value="nb" id="nb" />
-            <label for="nb">Non-binary</label>
-          </p>
-          <br>
-          </div>
-          <input type="text" name="videoURL" placeholder="https://youtube.com/your-video-link" />
-          <button type='submit'>submit</button>
-        </form>
+        <h4>Let's get started!</h4>
+          <li>You'll need an 11 second video</li>
+          <li>Make sure there is good lighting in the room</li>
+          <li>Be centered in the video. No Angles.</li>
+          <li>Most important. Be yourself!</li>
+          <li>Upload an HD video from YouTube or Vimeo</li>
+          <form action="<%= '/auth/register/' + user.id + '?_method=PUT' %>" method="POST">
+            <input type="text" name="videoURL" placeholder="https://youtube.com/your-video-link" />
+            <button type='submit'>submit</button>
+          </form>
       </div>
     </main>
     <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
