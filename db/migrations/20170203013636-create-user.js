@@ -35,8 +35,17 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
+      age: {
+        type: Sequelize.INTEGER
+      },
+      zipcode: {
+        type: Sequelize.INTEGER
+      },
+      gender: {
+        type: Sequelize.STRING(20)
+      },
       videoURL: {
-         allowNull: true,
+        allowNull: true,
         type: Sequelize.STRING(250)
       }
     });
