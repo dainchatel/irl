@@ -25,7 +25,6 @@ router.get('/messages', (req, res, next) => {
   });
 });
 
-
 router.put('/edit/:id', function(req, res, next) {
   models.User.update({
     username: req.body.username,

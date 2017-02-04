@@ -41,16 +41,32 @@ router.get('/userInfo/:id', function(req, res, next) {
 });
 
 router.put('/userInfo/:id', function(req, res, next) {
-  //console.log(req.user.id, req.body.videoURL)
   models.User.update({
     age: req.body.age,
     zipcode: req.body.zipcode,
     gender: req.body.gender,
   }, { where: { id: req.params.id } } )
   .then(function() {
-    res.redirect('../../user');
+    res.redirect('/auth/preferences/' + req.params.id);
   })
 });
+
+router.get('/preferences/:id', function(req, res, next) {
+  models.User.findById(req.params.id).then(function(user) {
+  res.render('auth/preferences', {user: user });
+  });
+});
+
+// router.put('/userInfo/:id', function(req, res, next) {
+//   models.User.update({
+//     age: req.body.age,
+//     zipcode: req.body.zipcode,
+//     gender: req.body.gender,
+//   }, { where: { id: req.params.id } } )
+//   .then(function() {
+//     res.redirect('../../user');
+//   })
+// });
 
 router.get('/login', authHelpers.loginRedirect, (req, res)=> {
   res.render('auth/login');
