@@ -6,7 +6,7 @@
     <main class="container">
       <div class="row">
         <h4>Last page before the fun begins.</h4>
-        <form action="<%= '/auth/preferences/' + user.id %>" method="POST">
+        <form action="<%= '/user/edit/preferences/' + id + '?_method=PUT' %>" method="POST">
             <h5 class="col s12">What's your preference?</h5>
               <p class="col s2">
                 <input name="gender" type="radio" value="m" id="m" />
@@ -23,6 +23,7 @@
             <h5 class="col s12">How far can you go?</h5>
               <div class="col s6">
               <select name="distance" class="browser-default">
+                <option value="" disabled selected>Choose your option</option>
                 <option value="5">5 miles</option>
                 <option value="10">10 miles</option>
                 <option value="15">15 miles</option>
@@ -33,6 +34,7 @@
               </div>
             <h5 class="col s12">How young will you date?</h5>
               <select name="ageMin" class="browser-default col s6">
+                <option value="" disabled selected>Choose your option</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
                 <option value="20">20</option>
@@ -119,6 +121,7 @@
               </select>
             <h5 class="col s12">How old?</h5>
               <select name="ageMax" class="browser-default col s6">
+                <option value="" disabled selected>Choose your option</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
                 <option value="20">20</option>
