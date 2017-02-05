@@ -18,13 +18,33 @@ router.get('/edit', function(req,res,next) {
   });
 });
 
+router.get('/edit/preferences/:id', (req, res, next) => {
+  models.Preferences.findById(req.params.id)
+  .then(function() {
+    console.log('HERE IS THE USER::' + req.params.id)
+    res.render('user/editPreferences', { id: req.params.id} );
+  });
+});
+
+router.put('/edit/preferences/:id', function(req, res, next) {
+  models.Preferences.update({
+    gender: req.body.gender,
+    distance: req.body.distance,
+    age_min: req.body.ageMin,
+    age_max: req.body.ageMax
+
+  }, { where: { user_id: req.params.id } })
+  .then(function() {
+    res.redirect('../../');
+  });
+});
+
 router.get('/messages', (req, res, next) => {
   res.render('user/messages', {
 
     user: req.user.dataValues
   });
 });
-
 
 router.put('/edit/:id', function(req, res, next) {
   models.User.update({

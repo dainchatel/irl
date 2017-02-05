@@ -24,6 +24,16 @@ function createUser(req, res) {
   });
 }
 
+function createUserPref(req, res) {
+  return models.Preferences.create({
+    user_id: req.params.id,
+    gender: req.body.gender,
+    distance: req.body.distance,
+    age_min: req.body.ageMin,
+    age_max: req.body.ageMax
+  });
+}
+
 function loginRequired(req, res, next) {
   if (!req.user) res.redirect('/auth/login');
 
@@ -41,5 +51,6 @@ module.exports = {
   comparePass,
   loginRedirect,
   loginRequired,
-  createUser
+  createUser,
+  createUserPref
 }
