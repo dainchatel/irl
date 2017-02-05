@@ -9,10 +9,17 @@
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main>
-        <div class="collection">
+        <div class="row">
+      <h1 class="col s4 offset-s1">Messages</h1>
+    </div>
+    <div class="collection">
+    <% messages.forEach(function(message) { %>
+      <div class="collection-item center blue-grey lighten-1">
+        <span><a class="white-text" href="#"><%= message.content %></a></span>
 
-       <p>hi</p>
       </div>
+    <% }) %>
+    </div>
 
 
 
