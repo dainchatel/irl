@@ -12,7 +12,7 @@ router.get('/',  (req, res, next)=> {
      content: 'content',
       messages: messages,
       fromUser: 'fromUser',
-      toUser: 'toUser'
+      toUser: 'toUser',
     });
   });
 });

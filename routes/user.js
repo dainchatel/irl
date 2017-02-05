@@ -73,8 +73,13 @@ router.get('/composemessage', (req, res, next) => {
   });
 });
 
-router.get('/messages',  (req, res, next)=> {
-  models.Messages.findAll({}).then(function(messages) {
+router.get('/messages/:id',  (req, res, next)=> {
+  models.Messages.findAll({
+where: {
+  fromUser: {
+    $eq: req.params.id}
+            }
+  }).then(function(messages) {
     res.render('user/messages', {
        content: 'content',
         messages: messages,
