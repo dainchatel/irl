@@ -75,10 +75,12 @@ router.get('/composemessage', (req, res, next) => {
 
 router.get('/messages/:id',  (req, res, next)=> {
   models.Messages.findAll({
-where: {
-  fromUser: {
-    $eq: req.params.id}
-            }
+order: [
+   ['toUser', 'DESC'],
+  ],
+  where: {
+  fromUser: {$eq: req.params.id},
+  }
   }).then(function(messages) {
     res.render('user/messages', {
        content: 'content',
