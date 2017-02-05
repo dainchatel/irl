@@ -18,7 +18,6 @@ router.get('/edit', function(req,res,next) {
   });
 });
 
-//////
 router.get('/edit/preferences/:id', (req, res, next) => {
   models.Preferences.findById(req.params.id)
   .then(function() {
