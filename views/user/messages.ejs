@@ -15,7 +15,9 @@
     <div class="collection">
     <% messages.forEach(function(message) { %>
       <div class="collection-item center blue-grey lighten-1">
-        <span><a class="white-text" href="#"><%= message.content %></a></span>
+        <span><a class="white-text" href="#"><%= message.content %></a></span><br />
+         <span><a class="white-text" href="#"><%= message.fromUser %></a></span><br />
+          <span><a class="white-text" href="#"><%= message.toUser %></a></span>
 
       </div>
     <% }) %>

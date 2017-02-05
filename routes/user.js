@@ -39,12 +39,6 @@ router.put('/edit/preferences/:id', function(req, res, next) {
   });
 });
 
-router.get('/messages', (req, res, next) => {
-  res.render('user/messages', {
-
-    user: req.user.dataValues
-  });
-});
 
 router.put('/edit/:id', function(req, res, next) {
   models.User.update({
@@ -78,5 +72,17 @@ router.get('/composemessage', (req, res, next) => {
     toUser: ''
   });
 });
+
+router.get('/messages',  (req, res, next)=> {
+  models.Messages.findAll({}).then(function(messages) {
+    res.render('user/messages', {
+       content: 'content',
+        messages: messages,
+        fromUser: 'fromUser',
+        toUser: 'toUser'
+    });
+  });
+});
+
 
 module.exports = router;

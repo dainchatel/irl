@@ -10,7 +10,9 @@ router.get('/',  (req, res, next)=> {
   models.Messages.findAll({}).then(function(messages) {
     res.render('user/messages', {
      content: 'content',
-      messages: messages
+      messages: messages,
+      fromUser: 'fromUser',
+      toUser: 'toUser'
     });
   });
 });
