@@ -17,6 +17,9 @@ function createUser(req, res) {
     lastName: req.body.lastName,
     email: req.body.email,
     dob: req.body.dob,
+    age: req.body.age,
+    zipcode: req.body.zipcode,
+    gender: req.body.gender,
     videoURL: req.body.videoURL
   });
 }

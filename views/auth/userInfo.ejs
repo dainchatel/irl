@@ -1,0 +1,34 @@
+<% include ../partials/head.ejs %> <!--- using head.ejs page from partials -->
+<title>Upload</title>
+</head>
+  <body>
+    <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
+    <main class="container">
+      <div class="row">
+        <h4>For the best experience we need a few more things</h4>
+        <form action="<%= '/auth/userInfo/' + user.id + '?_method=PUT' %>" method="POST">
+          <input class="col s6" type="number" name="age" min="18" max="100" placeholder="age" required />
+          <input class="col s6" type="number" name="zipcode" data-length="5" placeholder="zipcode" required />
+          <div class="input-field col s12">
+          <h5>Select your gender</h5>
+          <p class="col s2">
+            <input name="gender" type="radio" value="m" id="m" />
+            <label for="m">Male</label>
+          </p>
+          <p class="col s2">
+            <input name="gender" type="radio" value="f" id="f" />
+            <label for="f">Female</label>
+          </p>
+          <p class="col s2">
+            <input name="gender" type="radio" value="nb" id="nb" />
+            <label for="nb">Non-binary</label>
+          </p>
+          <br>
+          </div>
+          <button type='submit'>submit</button>
+        </form>
+      </div>
+    </main>
+    <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
+  </body>
+</html>

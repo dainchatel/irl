@@ -3,18 +3,18 @@
 </head>
   <body>
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
-    <main>
-      <h4>Let's get started!</h4>
-      <p>You'll need an 11 second video</p>
-      <p>Make sure there is good lighting in the room</p>
-      <p>Be centered in the video. No Angles.</p>
-      <p>Most important. Be yourself!</p>
-      <p>Upload an HD video from YouTube or Vimeo</p>
+    <main class="container">
       <div class="row">
-        <form action="<%= '/auth/register/' + user.id + '?_method=PUT' %>" method="POST">
-          <input type="text" name="videoURL" placeholder="https://youtube.com/your-video-link" />
-          <button type='submit'>submit</button>
-        </form>
+        <h4>Let's get started!</h4>
+          <li>You'll need an 11 second video</li>
+          <li>Make sure there is good lighting in the room</li>
+          <li>Be centered in the video. No Angles.</li>
+          <li>Most important. Be yourself!</li>
+          <li>Upload an HD video from YouTube or Vimeo</li>
+          <form action="<%= '/auth/register/' + user.id + '?_method=PUT' %>" method="POST">
+            <input type="text" name="videoURL" placeholder="https://youtube.com/your-video-link" />
+            <button type='submit'>submit</button>
+          </form>
       </div>
     </main>
     <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
