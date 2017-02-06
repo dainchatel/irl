@@ -30,16 +30,27 @@ document.getElementById("snap").addEventListener("click", function() {
   context.drawImage(video, 0, 0, 640, 480);
 });
 
-function convertImageToCanvas(image) {
-  var canvas = document.createElement("canvas");
-  canvas.width = image.width;
-  canvas.height = image.height;
-  canvas.getContext("2d").drawImage(image, 0, 0);
 
-  return canvas;
+
+function getImageDataURL(img) {
+  var canvas = document.createElement('canvas');
+  canvas.width = img.width;
+  canvas.height = img.height;
+  var context = canvas.getContext('2d');
+  context.drawImage(img, 0, 0);
+  var dataURL = canvas.toDataURL('image/png');
+  return dataURL;
 }
 
-
+var image = new Image();
+image.onload = function() {
+  var dataURL = getImageDataURL(image);
+  document.getElementById('canvas').innerHTML = dataURL;
+  image.src = dataURL;
+  document.body.appendChild(image);
+};
+image.crossOrigin = 'anonymous';
+image.src = "dataURL";
 
 function convertCanvasToImage(canvas, callback) {
   var image = new Image();
