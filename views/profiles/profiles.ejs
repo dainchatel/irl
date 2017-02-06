@@ -9,7 +9,7 @@
     <% users.forEach(function(user) { %>
       <div class="collection-item center blue-grey lighten-1">
         <span><a class="white-text" href="<%= '/profiles/' + user.id %>"><%= user.firstName %><%= user.age %></a></span>
-         <button class="btn" type="submit">Message</button>
+         <a href='<%= `/composemessage/${user.id}` %> ' <button class="btn" type="submit">Message</button></a>
       </div>
     <% }) %>
     </div>

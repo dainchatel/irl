@@ -47,7 +47,7 @@ router.put('/userInfo/:id', function(req, res, next) {
     gender: req.body.gender,
   }, { where: { id: req.params.id } } )
   .then(function() {
-    res.redirect('/auth/preferences/' + req.params.id);
+    res.redirect('/auth/preferences/' + req.params.id, {user:user});
   })
 });
 
@@ -64,17 +64,6 @@ router.post('/preferences/:id', (req, res, next)  => {
   })
   .catch((err) => { res.status(500).json({ status: 'error' }); });
 })
-
-// router.put('/userInfo/:id', function(req, res, next) {
-//   models.User.update({
-//     age: req.body.age,
-//     zipcode: req.body.zipcode,
-//     gender: req.body.gender,
-//   }, { where: { id: req.params.id } } )
-//   .then(function() {
-//     res.redirect('../../user');
-//   })
-// });
 
 router.get('/login', authHelpers.loginRedirect, (req, res)=> {
   res.render('auth/login');
