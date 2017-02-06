@@ -83,8 +83,8 @@ order: [
   }
   }).then(function(messages, author, usernameSecond) {
     let arr = [];
-for (let i = 0; i < res.locals.usernameSecond.length; i++ ) {
-  let names = arr.push(res.locals.usernameSecond[i].username);
+      for (let i = 0; i < res.locals.usernameSecond.length; i++ ) {
+        let names = arr.push(res.locals.usernameSecond[i].username);
   console.log(arr);
 }
     res.render('user/messages', {
