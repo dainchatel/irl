@@ -65,7 +65,7 @@ function getUsers(req, res, next) {
     type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
   }).then((usernameSecond) => {
     res.locals.usernameSecond = usernameSecond;// setting res.locals object to access in the response
-
+    console.log(usernameSecond);
    return next(); // next function
   });
 }

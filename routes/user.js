@@ -88,7 +88,7 @@ order: [
         messages: messages,
         fromUser: 'fromUser',
         toUser:  'toUser',
-        usernameSecond: usernameSecond,
+        usernameSecond: res.locals.usernameSecond[0].username,
         author: req.user.dataValues
 
     });
