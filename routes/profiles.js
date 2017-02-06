@@ -24,12 +24,14 @@ models.Preferences.findOne({
   where: { user_id: req.params.id }
 }).then((user) => {
   console.log('HERESDAUSER====+++++ ' + JSON.stringify(user));
+  console.log("WHAT THE GENDER IS +++" + JSON.stringify(user.gender))
   models.User.findAll({
     order: [
     ['age', 'ASC'],
   ],
   where: {
-  age: {$between: [user.age_min, user.age_max] }, //req.body.age_min, req.user.age_min, req.user.dataValues.age_min, models.User.dataValues.age_min
+  age: {$between: [user.age_min, user.age_max] },
+  gender: {$eq: user.gender}
   }
   })
    .then(function(users) {

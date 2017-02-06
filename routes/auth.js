@@ -47,7 +47,7 @@ router.put('/userInfo/:id', function(req, res, next) {
     gender: req.body.gender,
   }, { where: { id: req.params.id } } )
   .then(function() {
-    res.redirect('/auth/preferences/' + req.params.id, {user:user});
+    res.redirect('/auth/preferences/' + req.params.id);
   })
 });
 
