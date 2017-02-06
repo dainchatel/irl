@@ -47,10 +47,29 @@ function loginRedirect(req, res, next) {
 }
 
 
+
+function getMessages(req,res,next) {
+  models.sequelize.query('SELECT "Users"."firstName", "Users"."lastName", "Users"."id", "Users"."createdAt" FROM "Users" JOIN "Messages" ON "Messages"."id" = "Users"."id" WHERE "Users"."id" = :id', {
+    replacements: { id: req.user.id }, /// replaces :id in the query
+    type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
+  }).then((username) => {
+    res.locals.username = username;// setting res.locals object to access in the response
+    console.log(username);
+   return next(); // next function
+  });
+}
+
+
+
+
+
+
+
 module.exports = {
   comparePass,
   loginRedirect,
   loginRequired,
   createUser,
-  createUserPref
+  createUserPref,
+  getMessages
 }
