@@ -82,13 +82,17 @@ order: [
   fromUser: {$eq: req.params.id},
   }
   }).then(function(messages, author, usernameSecond) {
-
+    let arr = [];
+for (let i = 0; i < res.locals.usernameSecond.length; i++ ) {
+  let names = arr.push(res.locals.usernameSecond[i].username);
+  console.log(arr);
+}
     res.render('user/messages', {
        content: 'content',
         messages: messages,
         fromUser: 'fromUser',
         toUser:  'toUser',
-        usernameSecond: res.locals.usernameSecond[0].username,
+        usernameSecond: arr,
         author: req.user.dataValues
 
     });
