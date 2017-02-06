@@ -14,9 +14,9 @@
       <h1 class="col s4 offset-s1">Messages</h1>
     </div>
     <ul class="collapsible" data-collapsible="accordion">
-    <% messages.forEach(function(message, user, name) { %>
+    <% messages.forEach(function(message, user) { %>
  <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Message from <%= author.firstName %> <%= author.lastName %> To: <%= usernameSecond[user] %></div>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i> <%= message.createdAt %></div>
       <div class="collapsible-body"><span><%= message.content %>
         <a href="/profiles"><button class='btn'>New Message</button></a>
       </span></div>

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 //const authHelpers = require('../auth/auth-helpers');
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   if (req.user) {
@@ -11,4 +12,8 @@ router.get('/', function(req, res, next) {
    }
 });
 
+//router.get('/', function(req, res, next) {
+//});
+
 module.exports = router;
+
