@@ -5,7 +5,7 @@
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main class="container">
       <div class="row">
-        <h4>For the best experience we need a few more things</h4>
+        <h4>For the best experience, we need a few more things</h4>
         <form action="<%= '/auth/userInfo/' + user.id + '?_method=PUT' %>" method="POST">
           <input class="col s6" type="number" name="age" min="18" max="100" placeholder="age" required />
           <input class="col s6" type="number" name="zipcode" data-length="5" placeholder="zipcode" required />

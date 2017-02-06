@@ -18,10 +18,24 @@ router.get('/edit', function(req,res,next) {
   });
 });
 
-router.get('/messages', (req, res, next) => {
-  res.render('user/messages', {
+router.get('/edit/preferences/:id', (req, res, next) => {
+  models.Preferences.findById(req.params.id)
+  .then(function() {
+    console.log('HERE IS THE USER::' + req.params.id)
+    res.render('user/editPreferences', { id: req.params.id} );
+  });
+});
 
-    user: req.user.dataValues
+router.put('/edit/preferences/:id', function(req, res, next) {
+  models.Preferences.update({
+    gender: req.body.gender,
+    distance: req.body.distance,
+    age_min: req.body.ageMin,
+    age_max: req.body.ageMax
+
+  }, { where: { user_id: req.params.id } })
+  .then(function() {
+    res.redirect('../../');
   });
 });
 
@@ -58,5 +72,24 @@ router.get('/composemessage', (req, res, next) => {
     toUser: ''
   });
 });
+
+router.get('/messages/:id',  (req, res, next)=> {
+  models.Messages.findAll({
+order: [
+   ['toUser', 'DESC'],
+  ],
+  where: {
+  fromUser: {$eq: req.params.id},
+  }
+  }).then(function(messages) {
+    res.render('user/messages', {
+       content: 'content',
+        messages: messages,
+        fromUser: 'fromUser',
+        toUser: 'toUser'
+    });
+  });
+});
+
 
 module.exports = router;
