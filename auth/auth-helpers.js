@@ -60,7 +60,7 @@ function getMessages(req,res,next) {
 }
 
 function getUsers(req, res, next) {
-  models.sequelize.query('SELECT "Messages"."toUser", "Messages"."id", "Users"."username"  FROM "Messages" JOIN "Users" ON "Users"."id" = "Messages"."toUser" WHERE "Messages"."id" = :id', {
+  models.sequelize.query('SELECT "Messages"."toUser", "Messages"."id", "Users"."username"  FROM "Messages" JOIN "Users" ON "Users"."id" = "Messages"."toUser"  WHERE "Users"."id" = "Messages"."toUser" ', {
     replacements: { id: req.user.id }, /// replaces :id in the query
     type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
   }).then((usernameSecond) => {
@@ -69,9 +69,6 @@ function getUsers(req, res, next) {
    return next(); // next function
   });
 }
-
-
-
 
 
 

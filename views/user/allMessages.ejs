@@ -1,0 +1,33 @@
+
+
+<% include ../partials/head.ejs %> <!--- using head.ejs page from partials -->
+  <body>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+    <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
+    <main>
+        <div class="row">
+      <h1 class="col s4 offset-s1">Messages</h1>
+    </div>
+    <ul class="collapsible" data-collapsible="accordion">
+    <% messages.forEach(function(message, user) { %>
+ <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i> <%= message.createdAt %></div>
+      <div class="collapsible-body"><span><%= message.content %>
+        <a href="/profiles"><button class='btn'>New Message</button></a>
+      </span></div>
+
+</li>
+
+    <% }) %>
+
+    </main>
+    <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
+
+ <script src="../javascripts/editUser.js"></script>
+  </body>
+</html>
