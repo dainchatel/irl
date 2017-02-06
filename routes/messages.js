@@ -8,7 +8,7 @@ var models = require('../db/models/index');
 
 router.get('/',  (req, res, next)=> {
   models.Messages.findAll({}).then(function(messages) {
-    res.render('user/messages', {
+    res.render('user/allMessages', {
      content: 'content',
       messages: messages,
       fromUser: 'fromUser',
@@ -16,6 +16,8 @@ router.get('/',  (req, res, next)=> {
     });
   });
 });
+
+
 
 
 module.exports = router;

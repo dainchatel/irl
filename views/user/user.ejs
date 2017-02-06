@@ -5,6 +5,12 @@
 <title> Home </title>
 
 </head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
   <body>
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main>
@@ -19,10 +25,12 @@
       </div>
       <a href="/user/edit"><button class="btn">Edit</button></a>
       <a href="<%= '/user/messages/' + user.id %>"><button class="btn">Messages</button></a>
-
-
+      <video id="video" width="640" height="480" autoplay></video>
+      <button id="snap">Snap Photo</button>
+      <canvas id="canvas" width="640" height="480"></canvas>
 
     </main>
+     <script src="../javascripts/editUser.js"></script>
     <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
   </body>
 </html>
