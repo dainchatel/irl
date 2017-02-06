@@ -46,11 +46,23 @@ function loginRedirect(req, res, next) {
   return next();
 }
 
+function getProfiles(req,res,next) {
+ models.sequelize.query('SELECT "Users"."id", "Users"."username", "Users"."age", "Users"."dob", "Preferences"."distance", "Preferences"."age_min", "Preferences"."age_max", "Preferences"."gender" FROM "Users" JOIN "Preferences" ON "Users"."id" = "Preferences"."user_id" ', {
+   replacements: { id: req.user.id }, /// replaces :id in the query
+   type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
+ }).then((profiles) => {
+   res.locals.profiles = profiles;// setting res.locals object to access in the response
+   console.log("WHAT IS RES.LOCALS.USERS?????:  ++++ " + JSON.stringify(res.locals.profiles));
+  return next(); // next function
+ });
+}
+
 
 module.exports = {
   comparePass,
   loginRedirect,
   loginRequired,
   createUser,
-  createUserPref
+  createUserPref,
+  getProfiles
 }
