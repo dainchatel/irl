@@ -72,15 +72,15 @@ p {
     text-transform: lowercase;
     color: black; }
 
-div {
+.register {
   font-family: 'Open Sans';
   text-transform: lowercase;
   color: black; }
-  div input {
+  .register input {
     font-family: 'Open Sans';
     text-transform: lowercase;
     color: black; }
-  div label {
+  .register label {
     font-family: 'Open Sans';
     text-transform: lowercase;
     color: black; }
