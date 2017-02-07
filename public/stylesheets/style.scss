@@ -41,7 +41,19 @@ a {
   height: 25vh;
 }
 
+.reg-buttons {
+  height: 25vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+}
 
+#reg-button, #reg-button-2 {
+  font-family: 'Open Sans';
+  font-size: 4vh;
+  text-transform: lowercase;
+}
 
 .parallax-container {
   height: 60vh;
@@ -92,7 +104,7 @@ a {
 
 .footer-nav-ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 
