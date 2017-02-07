@@ -104,4 +104,13 @@ h5 {
   border: solid black;
   content: black; }
 
+.profile-holder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.carot {
+  font-size: 60px;
+  color: black; }
+
 /*# sourceMappingURL=style.css.map */
