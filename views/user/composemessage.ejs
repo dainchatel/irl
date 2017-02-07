@@ -11,12 +11,11 @@
     <main>
       <div class="container">
         <form action="<%='/composemessage/' + user.id %>" method="POST">
-          <div>
-            <label>Message:</label>
+          <div class="form">
+            <label class="footer-text black-text">Message:</label>
             <input type="text" name="content"/>
           </div>
-
-            <button class="btn waves-effect red lighten-2 waves-light" type="submit" name="action">
+      <button class="btn waves-effect waves-light black" type="submit" name="action">
     <i class="material-icons tiny">send</i>
   </button>
 

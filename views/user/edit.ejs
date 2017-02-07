@@ -6,32 +6,40 @@
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main class="container">
 
-      <form class="row" action="<%= '/user/edit/' + user.id + '?_method=PUT' %>" method="POST">
-        <label>username:</label><input type="text" name="username" value="<%= user.username %>" placeholder="<%= user.username %>"/>
-        <label>first:</label><input type="text" name="firstName" value="<%= user.firstName %>" placeholder="<%= user.firstName %>"/>
-        <label>last:</label><input type="text" name="lastName" value="<%= user.lastName %>" placeholder="<%= user.lastName %>"/>
-        <label>email:</label><input type="text" name="email" value="<%= user.email %>" placeholder="<%= user.email %>"/>
-        <label>dob:</label><input type="date" name="dob" value="<%= user.dob %>" placeholder="<%= user.dob %>" required/>
-        <label>zipcode:</label><input type="number" name="zipcode" value="<%= user.zipcode %>" placeholder="<%= user.zipcode %>"/>
-        <p class="col s2">
+      <form class="row form" action="<%= '/user/edit/' + user.id + '?_method=PUT' %>" method="POST">
+        <div class="col s10 offset-s1">
+          <label id="form-font" class="black-text">username:</label><input type="text" name="username" value="<%= user.username %>" placeholder="<%= user.username %>"/>
+          <label id="form-font" class="black-text">first:</label><input type="text" name="firstName" value="<%= user.firstName %>" placeholder="<%= user.firstName %>"/>
+          <label id="form-font" class="black-text">last:</label><input type="text" name="lastName" value="<%= user.lastName %>" placeholder="<%= user.lastName %>"/>
+          <label id="form-font" class="black-text">email:</label><input type="text" name="email" value="<%= user.email %>" placeholder="<%= user.email %>"/>
+          <label id="form-font" class="black-text">dob:</label><input type="date" name="dob" value="<%= user.dob %>" placeholder="<%= user.dob %>" required/>
+          <label id="form-font" class="black-text">zipcode:</label><input type="number" name="zipcode" value="<%= user.zipcode %>" placeholder="<%= user.zipcode %>"/>
+        </div>
+        <div class="col s10 offset-s1">
+          <p id="form-font" class="col s4">
             <input name="gender" type="radio" value="m" id="m" />
-            <label for="m">Male</label>
+            <label for="m">male</label>
           </p>
-          <p class="col s2">
+          <p id="form-font" class="col s4">
             <input name="gender" type="radio" value="f" id="f" />
-            <label for="f">Female</label>
+            <label for="f">female</label>
           </p>
-          <p class="col s2">
+          <p id="form-font" class="col s4">
             <input name="gender" type="radio" value="nb" id="nb" />
-            <label for="nb">Non-binary</label>
+            <label for="nb">non-binary</label>
           </p>
         <input type="text" name="videoURL" value="<%= user.videoURL %>" placeholder="<%= user.videoURL %>"/>
-      <button class="btn" type='submit'>Save</button>
+        <button id="form-font" class="btn black" type='submit'>Save</button>
+      </div>
       </form>
-      <a href='<%= `/user/edit/preferences/${user.id}` %>'><button class="btn">Change Preferences</button></a>
-      <form class="alert" action='<%= `/user/edit/${user.id}?_method=DELETE` %>' method='POST'>
-        <button class="btn" type="submit">Delete</button>
+      <div class="row">
+      <a class="left col s5 offset-s1" href='<%= `/user/edit/preferences/${user.id}` %>'><button id="form-font" class="btn black">preferences</button></a>
+      <div class="row">
+      <form class="alert col s5 offest-s1" action='<%= `/user/edit/${user.id}?_method=DELETE` %>' method='POST'>
+        <button id="form-font" class="btn black right offset-s2" type="submit">delete</button>
       </form>
+      </div>
+      </div>
     </main>
     <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
   <script

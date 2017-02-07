@@ -7,18 +7,19 @@
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main>
       <div class="container">
-        <form action="/auth/login" method="post">
+        <div class="row form">
+        <form class="col s6 offset-s3" action="/auth/login" method="post">
           <div>
-            <label>Username:</label>
+            <label class="black-text">Username:</label>
             <input type="text" name="username"/>
           </div>
           <div>
-            <label>Password:</label>
+            <label class="black-text">Password:</label>
             <input type="password" name="password"/>
           </div>
           <div>
-           <a class="waves-effect waves-light btn">
-            <input type="submit" value="Log In"/>
+           <a class="col s12 center">
+            <button id="form-font" class="form waves-effect waves-light btn black" type="submit" value="Log In">Log In</button>
             </a>
           </div>
         </form>

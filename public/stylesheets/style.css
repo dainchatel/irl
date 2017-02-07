@@ -52,4 +52,65 @@ a {
   font-family: 'Open Sans';
   text-transform: lowercase; }
 
+.form {
+  margin-top: 30px; }
+
+#form-font {
+  font-family: 'Open Sans';
+  text-transform: lowercase; }
+
+p {
+  font-family: 'Open Sans';
+  text-transform: lowercase;
+  color: black; }
+  p input {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+  p label {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+
+.register {
+  font-family: 'Open Sans';
+  text-transform: lowercase;
+  color: black; }
+  .register input {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+  .register label {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+
+h5 {
+  font-family: 'Open Sans';
+  text-transform: lowercase;
+  color: black; }
+  h5 select {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+  h5 option {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+
+#radio {
+  color: black;
+  background-color: black;
+  border: solid black;
+  content: black; }
+
+.profile-holder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.carot {
+  font-size: 60px;
+  color: black; }
+
 /*# sourceMappingURL=style.css.map */
