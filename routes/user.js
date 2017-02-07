@@ -73,7 +73,7 @@ router.get('/composemessage', (req, res, next) => {
   });
 });
 
-router.get('/messages/:id',  (req, res, next)=> {
+router.get('/messages/:id',  authHelpers.getMessages, authHelpers.getUsers, (req, res, next)=> {
   models.Messages.findAll({
 order: [
    ['toUser', 'DESC'],
@@ -81,12 +81,20 @@ order: [
   where: {
   fromUser: {$eq: req.params.id},
   }
-  }).then(function(messages) {
+  }).then(function(messages, author, usernameSecond) {
+    let arr = [];
+      for (let i = 0; i < res.locals.usernameSecond.length; i++ ) {
+        let names = arr.push(res.locals.usernameSecond[i].username);
+  console.log(arr);
+}
     res.render('user/messages', {
        content: 'content',
         messages: messages,
         fromUser: 'fromUser',
-        toUser: 'toUser'
+        toUser:  'toUser',
+        usernameSecond: arr,
+        author: req.user.dataValues
+
     });
   });
 });

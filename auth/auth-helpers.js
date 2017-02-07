@@ -46,11 +46,52 @@ function loginRedirect(req, res, next) {
   return next();
 }
 
+function getProfiles(req,res,next) {
+ models.sequelize.query('SELECT "Users"."id", "Users"."username", "Users"."age", "Users"."dob", "Preferences"."distance", "Preferences"."age_min", "Preferences"."age_max", "Preferences"."gender" FROM "Users" JOIN "Preferences" ON "Users"."id" = "Preferences"."user_id" ', {
+   replacements: { id: req.user.id }, /// replaces :id in the query
+   type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
+ }).then((profiles) => {
+   res.locals.profiles = profiles;// setting res.locals object to access in the response
+   console.log("WHAT IS RES.LOCALS.USERS?????:  ++++ " + JSON.stringify(res.locals.profiles));
+  return next(); // next function
+ });
+}
+
+
+
+function getMessages(req,res,next) {
+  models.sequelize.query('SELECT "Users"."firstName", "Users"."lastName", "Users"."id", "Users"."createdAt" FROM "Users" JOIN "Messages" ON "Messages"."id" = "Users"."id" WHERE "Users"."id" = :id', {
+    replacements: { id: req.user.id }, /// replaces :id in the query
+    type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
+  }).then((author) => {
+    res.locals.author= author;// setting res.locals object to access in the response
+    console.log(author);
+   return next(); // next function
+  });
+}
+
+function getUsers(req, res, next) {
+  models.sequelize.query('SELECT "Messages"."toUser", "Messages"."id", "Users"."username"  FROM "Messages" JOIN "Users" ON "Users"."id" = "Messages"."toUser"  WHERE "Users"."id" = "Messages"."toUser" ', {
+    replacements: { id: req.user.id }, /// replaces :id in the query
+    type: models.sequelize.QueryTypes.SELECT // don't need metadata in the response
+  }).then((usernameSecond) => {
+    res.locals.usernameSecond = usernameSecond;// setting res.locals object to access in the response
+    console.log(usernameSecond);
+   return next(); // next function
+  });
+}
+
+
+
 
 module.exports = {
   comparePass,
   loginRedirect,
   loginRequired,
   createUser,
-  createUserPref
+  createUserPref,
+  getProfiles,
+  getMessages,
+  getUsers
+
 }
