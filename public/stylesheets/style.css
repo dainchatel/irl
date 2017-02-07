@@ -88,6 +88,11 @@ h5 {
 #radio {
   color: black;
   background-color: black;
-  border: solid black; }
+  border: solid black;
+  content: black; }
+
+input[type=radio] {
+  color: black;
+  content: black !important; }
 
 /*# sourceMappingURL=style.css.map */
