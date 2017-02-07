@@ -66,7 +66,7 @@ a {
 }
 
 .form {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 #form-font {
@@ -75,6 +75,22 @@ a {
 }
 
 p {
+  font-family: 'Open Sans';
+  text-transform: lowercase;
+  color: black;
+  input {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black;
+  }
+    label {
+      font-family: 'Open Sans';
+      text-transform: lowercase;
+      color: black;
+    }
+}
+
+div {
   font-family: 'Open Sans';
   text-transform: lowercase;
   color: black;

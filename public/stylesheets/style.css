@@ -53,7 +53,7 @@ a {
   text-transform: lowercase; }
 
 .form {
-  margin-top: 20px; }
+  margin-top: 30px; }
 
 #form-font {
   font-family: 'Open Sans';
@@ -68,6 +68,19 @@ p {
     text-transform: lowercase;
     color: black; }
   p label {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+
+div {
+  font-family: 'Open Sans';
+  text-transform: lowercase;
+  color: black; }
+  div input {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+  div label {
     font-family: 'Open Sans';
     text-transform: lowercase;
     color: black; }
@@ -90,9 +103,5 @@ h5 {
   background-color: black;
   border: solid black;
   content: black; }
-
-input[type=radio] {
-  color: black;
-  content: black !important; }
 
 /*# sourceMappingURL=style.css.map */
