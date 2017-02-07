@@ -22,11 +22,14 @@
         <a href="" class="collection-item center"><p><%= user.email %></p></a>
         <a href="" class="collection-item center"> <p><%= user.dob %></p></a>
         <a href="/auth/logout" class="collection-item center">LOG OUT</a> <!--- on click we can logout and redirect to a main page-->
+        <iframe class='center-align' width="560" height="315" src="<%= user.videoURL %>?rel=0&autoplay=1" frameborder="0" allowfullscreen ></iframe>
       </div>
       <a href="/user/edit"><button class="btn">Edit</button></a>
       <a href="<%= '/user/messages/' + user.id %>"><button class="btn">Messages</button></a>
       <video id="video" width="640" height="480" autoplay></video>
       <button id="snap">Snap Photo</button>
+      <button id="snap1" onClick="startVideo()">Start Video</button>
+       <button id="snap2" onClick="stopVideo()">Stop Video</button>
       <canvas id="canvas" width="640" height="480"></canvas>
 
     </main>
