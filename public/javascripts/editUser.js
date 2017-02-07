@@ -81,3 +81,4 @@ function convertCanvasToImage(canvas, callback) {
   }
   image.src = canvas.toDataURL("image/png");
 }
+
