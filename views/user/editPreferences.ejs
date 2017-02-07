@@ -5,24 +5,24 @@
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main class="container">
       <div class="row">
-        <form class="col s8 offset-s2"action="<%= '/user/edit/preferences/' + id + '?_method=PUT' %>" method="POST">
-            <h5 class="col s12">What's your preference?</h5>
-              <p class="col s4 offset-s1">
+        <form class="col s10 offset-s1" action="<%= '/user/edit/preferences/' + id + '?_method=PUT' %>" method="POST">
+            <h4 class="col s12 center">match preferences</h4>
+              <p class="col s4">
                 <input name="gender" type="radio" value="m" id="m" />
-                <label for="m">Male</label>
+                <label for="m">man</label>
               </p>
-              <p class="col s3">
+              <p class="col s4">
                 <input name="gender" type="radio" value="f" id="f" />
-                <label for="f">Female</label>
+                <label for="f">woman</label>
               </p>
-              <p class="col s3">
+              <p class="col s4">
                 <input name="gender" type="radio" value="nb" id="nb" />
-                <label for="nb">Non-binary</label>
+                <label for="nb">non-binary</label>
               </p>
-            <h5 class="col s12">How far can you go?</h5>
+            <h5 class="col s12">distance</h5>
               <div class="col s12">
               <select name="distance" class="browser-default">
-                <option value="" disabled selected>Choose your option</option>
+                <option value="" disabled selected>choose your option</option>
                 <option value="5">5 miles</option>
                 <option value="10">10 miles</option>
                 <option value="15">15 miles</option>
@@ -31,10 +31,10 @@
                 <option value="30">30 miles</option>
               </select>
               </div>
-            <h5 class="col s12">How young will you date?</h5>
+            <h5 class="col s12">min age</h5>
               <div class="col s12">
               <select name="ageMin" class="browser-default">
-                <option value="" disabled selected>Choose your option</option>
+                <option value="" disabled selected>choose your option</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
                 <option value="20">20</option>
@@ -120,10 +120,10 @@
                 <option value="100">100</option>
               </select>
               </div>
-            <h5 class="col s12">How old?</h5>
+            <h5 class="col s12">max age</h5>
               <div class="col s12">
               <select name="ageMax" class="browser-default">
-                <option value="" disabled selected>Choose your option</option>
+                <option value="" disabled selected>choose your option</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
                 <option value="20">20</option>
