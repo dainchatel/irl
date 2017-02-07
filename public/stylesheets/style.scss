@@ -65,9 +65,35 @@ a {
   text-transform: lowercase;
 }
 
-#button-font {
+.form {
+  padding-top: 20px;
+}
+
+#form-font {
   font-family: 'Open Sans';
   text-transform: lowercase;
+}
+
+p {
+  font-family: 'Open Sans';
+  text-transform: lowercase;
+  color: black;
+  input {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black;
+  }
+    label {
+      font-family: 'Open Sans';
+      text-transform: lowercase;
+      color: black;
+    }
+}
+
+#radio {
+  color:black;
+  background-color: black;
+  border: solid black;
 }
 
 
