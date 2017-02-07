@@ -343,10 +343,9 @@ input.textarea {
     margin-top: 0.1em;
     border:  none;
     outline: none;
-    width: 49%;
+    width: 49.8%;
     text-align: center;
     height: 30px;
-
     background: #fafafa;
     border: none;
     outline: none;
@@ -355,6 +354,9 @@ input.textarea {
     color: #666;
     font-weight: 400;
      font-family: 'Open Sans';
+
+
+
 }
 
 
