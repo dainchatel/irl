@@ -1,15 +1,16 @@
 <% include ../partials/head.ejs %>
 <title> <%= user.firstName %> </title>
 </head>
+<% include ../partials/header.ejs %>
 <div class="row">
 
-<div class="col s12 center">
+<div class="form col s12 center">
 <iframe class='center-align' width="560" height="315" src="<%= user.videoURL %>?rel=0&autoplay=1" frameborder="0" allowfullscreen ></iframe>
-</div>
 
 <h3 class="center"><%= user.firstName %>, <%= user.age %></h3>
-<a href="<%='/composemessage/' + user.id %>"><button class='btn black'>Message</button></a>
-<a href="/profiles"><button class="btn black">Profiles</button></a>
+<a href="<%='/composemessage/' + user.id %>"><button id="form-font" class='btn black center'>Message</button></a>
+<a href="/profiles"><button id="form-font" class="btn black center">Profiles</button></a>
+</div>
 
 
 
