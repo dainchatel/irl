@@ -1,28 +1,29 @@
-<footer class="page-footer">
-          <div class="container">
+
+
+
+
+<footer class="page-footer white">
+<div class='container'>
+  <nav class="black">
+    <ul class='footer-nav-ul'>
+      <li><a href="/user"><i class='material-icons'>home</i></a></li>
+      <li><a href="<%= '/user/messages/' + user.id %>"><i class='material-icons'>email</i></a></li>
+      <li><a href="<%= '/profiles/' + user.id %>"><i class='material-icons'>contacts</i></a></li>
+      <li><a href="/user/edit"><i class='material-icons'>settings</i></a></li>
+      <li><a href="/auth/logout"><i class='material-icons'>home</i></a></li>
+    </ul>
+  </nav>
+  </div>
+<!--           <div class="container">
             <div class="row">
-              <div class="col l6 s12">
-                <a class="grey-text text-lighten-3" href="#!"><h5 class="white-text">Contact us</h5></a>
-                <p class="grey-text text-lighten-4"></p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="/user">Home</a></li>
-                  <li><a class="grey-text text-lighten-3" href="/messages">Messages</a></li>
-                  <li><a class="grey-text text-lighten-3" href="<%= `/profiles/0` %>">Profiles</a></li>
-
-                </ul>
-
+              <div class="center-align">
+                <a class="footer-text" href="#!"><h5 class="black-text">contact us</h5></a>
+                <div class="black-text">
+                  <p class='footer-text'>© 2017 Dain, Alex, Chris</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2017 Express General Assembly
-
-            </div>
-          </div>
+          </div> -->
           <style type="text/css">
             body {
     display: flex;
@@ -38,3 +39,7 @@
 </footer>
 
 
+
+
+
+</footer>
