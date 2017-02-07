@@ -7,23 +7,22 @@
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main>
       <div class="container">
-        <div class="row"
-          <form action="/auth/login" method="post">
-            <div>
-              <label>Username:</label>
-              <input type="text" name="username"/>
-            </div>
-            <div>
-              <label>Password:</label>
-              <input type="password" name="password"/>
-            </div>
-            <div>
-             <a>
-              <button class="waves-effect waves-light btn black" id="button-font" type="submit">Log In</button>
-              </a>
-            </div>
-          </form>
-        </div>
+        <div class="row">
+        <form action="/auth/login" method="post">
+          <div>
+            <label>Username:</label>
+            <input type="text" name="username"/>
+          </div>
+          <div>
+            <label>Password:</label>
+            <input type="password" name="password"/>
+          </div>
+          <div>
+           <a>
+            <button id="font-button" class="waves-effect waves-light btn black" type="submit" value="Log In">Log In</button>
+            </a>
+          </div>
+        </form>
       </div>
     </main>
    <% include ../partials/footerNoUser.ejs %><!--- using footer.ejs page from partials -->
