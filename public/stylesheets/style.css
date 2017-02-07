@@ -53,7 +53,7 @@ a {
   text-transform: lowercase; }
 
 .form {
-  padding-top: 20px; }
+  margin-top: 20px; }
 
 #form-font {
   font-family: 'Open Sans';
@@ -68,6 +68,19 @@ p {
     text-transform: lowercase;
     color: black; }
   p label {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+
+h5 {
+  font-family: 'Open Sans';
+  text-transform: lowercase;
+  color: black; }
+  h5 select {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+  h5 option {
     font-family: 'Open Sans';
     text-transform: lowercase;
     color: black; }

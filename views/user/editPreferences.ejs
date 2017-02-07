@@ -5,23 +5,22 @@
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main class="container">
       <div class="row">
-        <h4>Last page before the fun begins.</h4>
-        <form action="<%= '/user/edit/preferences/' + id + '?_method=PUT' %>" method="POST">
+        <form class="col s8 offset-s2"action="<%= '/user/edit/preferences/' + id + '?_method=PUT' %>" method="POST">
             <h5 class="col s12">What's your preference?</h5>
-              <p class="col s2">
+              <p class="col s4 offset-s1">
                 <input name="gender" type="radio" value="m" id="m" />
                 <label for="m">Male</label>
               </p>
-              <p class="col s2">
+              <p class="col s3">
                 <input name="gender" type="radio" value="f" id="f" />
                 <label for="f">Female</label>
               </p>
-              <p class="col s8">
+              <p class="col s3">
                 <input name="gender" type="radio" value="nb" id="nb" />
                 <label for="nb">Non-binary</label>
               </p>
             <h5 class="col s12">How far can you go?</h5>
-              <div class="col s6">
+              <div class="col s12">
               <select name="distance" class="browser-default">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="5">5 miles</option>
@@ -33,7 +32,8 @@
               </select>
               </div>
             <h5 class="col s12">How young will you date?</h5>
-              <select name="ageMin" class="browser-default col s6">
+              <div class="col s12">
+              <select name="ageMin" class="browser-default">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
@@ -119,8 +119,10 @@
                 <option value="99">99</option>
                 <option value="100">100</option>
               </select>
+              </div>
             <h5 class="col s12">How old?</h5>
-              <select name="ageMax" class="browser-default col s6">
+              <div class="col s12">
+              <select name="ageMax" class="browser-default">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="18">18</option>
                 <option value="19">19</option>
@@ -206,8 +208,11 @@
                 <option value="99">99</option>
                 <option value="100">100</option>
               </select>
-            <div class="col s12">
-            <button class="btn" type='submit'>submit</button>
+              </div>
+            <div class="row">
+            <div class="col s12 center">
+            <button id="form-font" class="btn black form" type='submit'>submit</button>
+            </div>
             </div>
           </form>
         </div>
