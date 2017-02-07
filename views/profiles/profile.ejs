@@ -1,31 +1,23 @@
 <% include ../partials/head.ejs %>
 <title> <%= user.firstName %> </title>
 </head>
+<% include ../partials/header.ejs %>
 <div class="row">
-        <div class="col s10 offset-s1">
-          <div class="card blue-grey lighten-1">
-            <div class="card-content white-text">
-              <span class="card-title"><h3><%= user.firstName %></h3></span>
-              <p><%= user.firstName %></p>
-            </div>
-            <div class="card-action">
+<div class="form col s12 center">
+<div class='profile-holder'>
+<a class="carot" href="<%= `/profiles/${counter-1}` %>"/><</a>
 
-
-
-
-                <a href="<%='/composemessage/' + user.id %>"><button class='btn'>Message</button></a>
-
-              <a href="/user"><button class="btn">Back</button></a>
-              <a href="/profiles"><button class="btn">Profiles</button></a>
-
-
-
-               </div>
-            </div>
-           </div>
-        </div>
-<div>
 <iframe class='center-align' width="560" height="315" src="<%= user.videoURL %>?rel=0&autoplay=1" frameborder="0" allowfullscreen ></iframe>
+<a class="carot" href="<%= `/profiles/${counter+1}` %>"/>></a>
 </div>
+<h3 class="center"><%= user.firstName %>, <%= user.age %></h3>
+<a href="<%='/composemessage/' + user.id %>"><button id="form-font" class='btn black center'>Message</button></a>
+</div>
+
+
+
+</div>
+
   </body>
+
 </html>

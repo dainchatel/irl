@@ -1,33 +1,113 @@
 
-
-<% include ../partials/head.ejs %> <!--- using head.ejs page from partials -->
+<% include ../partials/head.ejs %>
+ <!--- using head.ejs page from partials -->
   <body>
  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="../javascripts/editUser.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+       <link rel='stylesheet' href='/stylesheets/messages.css' />
 
-    <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
+
+<% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main>
-        <div class="row">
-      <h1 class="col s4 offset-s1">Messages</h1>
-    </div>
-    <ul class="collapsible" data-collapsible="accordion">
-    <% messages.forEach(function(message, user, name) { %>
- <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Message from <%= author.firstName %> <%= author.lastName %> To: <%= usernameSecond[user] %></div>
-      <div class="collapsible-body"><span><%= message.content %>
-        <a href="/profiles"><button class='btn'>New Message</button></a>
-      </span></div>
+<script type="text/javascript">
+function f1(objButton){
+  let content = objButton.value;
+  let moreContent = objButton.placeholder;
+  var x = document.getElementsByClassName("second");
+  var i;
+  for (i = 0; i < x.length; i++) {
+  x[i].innerHTML = content;}
+  var z = document.getElementsByClassName("third");
+  var b;
+  for (b = 0; b < x.length; b++) {
+  z[b].innerHTML = moreContent;}
+ }
 
-</li>
+function f2(objButton){
+  let messageContent = objButton.placeholder;
+  var x = document.getElementsByClassName("message");
+  var i;
+  for (i = 0; i < x.length; i++) {
+  x[i].innerHTML = messageContent;}
+}
+</script>
+
+  <ul class="collapsible" data-collapsible="accordion">
+    <% messages.forEach(function(message, user, name) { %>
+    <li >
+      <input type='button' class="messageButtons" value='<%= author.firstName %> <%= author.lastName %> To:  <%= usernameSecond[user] %>'
+      placeholder='<%= usernameSecond[user] %> To: <%= author.firstName %> <%= author.lastName %>' onClick='f1(this)' />
+      <input type='button' class="messageButtons" value="<%= message.content %>" placeholder='<%= message.content %>' onClick='f2(this)' />
+   </li>
+
+
 
     <% }) %>
 
-    </main>
-    <% include ../partials/footerNoUser.ejs %> <!--- using footer.ejs page from partials -->
+</main>
 
- <script src="../javascripts/editUser.js"></script>
+ <div class="menu">
+            <div class="back"><i class="fa fa-chevron-left"></i> <img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+            <div class="name">Welcome back, <%= author.firstName %> !</div>
+            <div class="last">18:09</div>
+        </div>
+
+
+    <ol class="chat">
+    <li class="other">
+        <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+      <div class="msg">
+        <p class="second"> </p>
+        <p class="message"></p>
+
+      </div>
+    </li>
+    <li class="self">
+        <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+      <div class="msg">
+        <p class="third"></p>
+        <p class="message"><emoji class="books"/></p>
+
+
+      </div>
+    </li>
+    <li class="other">
+        <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+      <div class="msg">
+        <p class="second"> </p>
+          <p class="message"></p>
+      </div>
+    </li>
+    <li class="self">
+        <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+      <div class="msg">
+      <p class="third"></p>
+       <p class="message"></p>
+
+      </div>
+    </li>
+    <li class="other">
+        <div class="avatar"><img src="http://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+      <div class="msg">
+        <p><emoji class="scream"/></p>
+       <p class="second"> </p>
+        <p class="message"></p>
+      </div>
+    </li>
+    <li class="self">
+        <div class="avatar"><img src="http://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+      <div class="msg">
+       <p class="third"></p>
+        <p class="message"></p>
+      </div>
+    </li>
+</ol>
+     <input class="textarea" type="text" placeholder="Type here!"/><div class="emojis"></div>
   </body>
+
 </html>
+

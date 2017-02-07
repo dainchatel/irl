@@ -1,9 +1,9 @@
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 
 <% include ../partials/head.ejs %> <!--- using head.ejs page from partials -->
   <body>
@@ -11,17 +11,27 @@
     <main>
       <div class="container">
         <form action="<%='/composemessage/' + user.id %>" method="POST">
-          <div>
-            <label>Message:</label>
+          <div class="form">
+            <label class="footer-text black-text">Message:</label>
             <input type="text" name="content"/>
           </div>
-
-            <button class="btn waves-effect red lighten-2 waves-light" type="submit" name="action">
+      <button class="btn waves-effect waves-light black" type="submit" name="action">
     <i class="material-icons tiny">send</i>
   </button>
 
         </form>
+ <iframe class='center-align' width="560" height="315" src="<%= user.videoURL %>?rel=0&autoplay=1" frameborder="0" allowfullscreen ></iframe>
+
+
+      <video id="video" width="640" height="480" autoplay></video>
+      <button id="snap">Snap Photo</button>
+      <button id="snap1" onClick="startVideo()">Start Video</button>
+       <button id="snap2" onClick="stopVideo()">Stop Video</button>
+      <canvas id="canvas" width="640" height="480"></canvas>
+
+
       </div>
+      <script src="../javascripts/editUser.js"></script>
     </main>
     <% include ../partials/footerNoUser.ejs %> <!--- using footer.ejs page from partials -->
   </body>

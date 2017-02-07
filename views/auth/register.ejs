@@ -6,53 +6,57 @@
     <% include ../partials/header.ejs %>
     <main>
       <div class="container">
-        <div class="row">
+        <div class="row form">
+          <form class="col s10 offset-s1" id="form-font" action="/auth/register" method="post">
+            <div class="register col s6">
+              <label>Username:</label>
+              <input type="text" name="username"/>
+            </div>
+             <div class="register col s6">
+              <label>Password:</label>
+              <input type="password" name="password"/>
+            </div>
+            <div class="register col s6">
+              <label>First Name:</label>
+              <input type="text" name="firstName"/>
+            </div>
+            <div class="register col s6">
+              <label>Last Name:</label>
+              <input type="text" name="lastName"/>
+            </div>
+             <div class="register col s6">
+              <label>Email:</label>
+              <input type="email" name="email"/>
+            </div>
+            <div class="register col s6">
+              <label>Date of Birth:</label>
+              <input type="date" name="dob"/>
+            </div>
+            <div class="register col s12">
+              <label>zipcode:</label>
+              <input type="number" name="zipcode" data-length="5" required />
+            </div>
 
-        <form action="/auth/register" method="post">
-          <div class="col s6">
-            <label>Username:</label>
-            <input type="text" name="username"/>
-          </div>
-           <div class="col s6">
-            <label>Password:</label>
-            <input type="password" name="password"/>
-          </div>
-          <div class="col s6">
-            <label>First Name:</label>
-            <input type="text" name="firstName"/>
-          </div>
-          <div class="col s6">
-            <label>Last Name:</label>
-            <input type="text" name="lastName"/>
-          </div>
-           <div class="col s6">
-            <label>Email:</label>
-            <input type="email" name="email"/>
-          </div>
-          <div class="col s6">
-            <label>Date of Birth:</label>
-            <input type="date" name="dob"/>
-          </div>
-          <input class="col s6" type="number" name="zipcode" data-length="5" placeholder="zipcode" required />
-          <div class="input-field col s12">
-          <h5>Select your gender</h5>
-          <p class="col s2">
-            <input name="gender" type="radio" value="m" id="m" />
-            <label for="m">Male</label>
-          </p>
-          <p class="col s2">
-            <input name="gender" type="radio" value="f" id="f" />
-            <label for="f">Female</label>
-          </p>
-          <p class="col s2">
-            <input name="gender" type="radio" value="nb" id="nb" />
-            <label for="nb">Non-binary</label>
-          </p>
-          <br>
-          </div>
-            <button class="btn" type="submit" value="Register">Submit</button>
-          </div>
-        </form>
+            <div class="register">
+              <h5 class="center">gender</h5>
+              <p id="form-font" class="col s4 left">
+                <input name="gender" type="radio" value="m" id="m" />
+                <label for="m">man</label>
+              </p>
+              <p id="form-font" class="center col s4">
+                <input name="gender" type="radio" value="f" id="f" />
+                <label for="f">woman</label>
+              </p>
+              <p id="form-font" class="col s4 right right-align">
+                <input name="gender" type="radio" value="nb" id="nb" />
+                <label for="nb">non-binary</label>
+              </p>
+              </div>
+              <div class="col s12 center">
+                <button id="form-font" class="btn black form" type="submit" value="Register">Submit</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </main>

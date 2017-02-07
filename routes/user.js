@@ -85,7 +85,9 @@ order: [
     let arr = [];
       for (let i = 0; i < res.locals.usernameSecond.length; i++ ) {
         let names = arr.push(res.locals.usernameSecond[i].username);
-  console.log(arr);
+
+   console.log("m content========"+ messages[0].content);
+
 }
     res.render('user/messages', {
        content: 'content',
@@ -93,8 +95,9 @@ order: [
         fromUser: 'fromUser',
         toUser:  'toUser',
         usernameSecond: arr,
-        author: req.user.dataValues
-
+        author: req.user.dataValues,
+        user: req.params.id,
+        message: messages
     });
   });
 });
