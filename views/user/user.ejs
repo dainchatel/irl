@@ -14,7 +14,9 @@
   <body>
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main>
-
+    <div id='video-container'>
+      <video id="video" width="640" height="480" autoplay></video>
+    </div>
       <div class="collection">
         <a href="" class="collection-item center"> <p><%= user.username %></p></a> <!--- using dynamic data  from our database to render user information -->
         <a href="" class="collection-item center"> <p><%= user.firstName %></p></a> <!--- using dynamic data  from our database to render user information -->
@@ -26,7 +28,7 @@
       </div>
       <a href="/user/edit"><button class="btn">Edit</button></a>
       <a href="<%= '/user/messages/' + user.id %>"><button class="btn">Messages</button></a>
-      <video id="video" width="640" height="480" autoplay></video>
+
       <button id="snap">Snap Photo</button>
       <button id="snap1" onClick="startVideo()">Start Video</button>
        <button id="snap2" onClick="stopVideo()">Stop Video</button>
