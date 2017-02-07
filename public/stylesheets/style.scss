@@ -41,19 +41,7 @@ a {
   height: 25vh;
 }
 
-.reg-buttons {
-  height: 25vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: black;
-}
 
-#reg-button, #reg-button-2 {
-  font-family: 'Open Sans';
-  font-size: 4vh;
-  text-transform: lowercase;
-}
 
 .parallax-container {
   height: 60vh;
@@ -68,7 +56,43 @@ a {
 #video-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
+.user-display-text {
+  font-family: 'Poppins';
+  font-weight: 700;
+
+
+}
+
+#main-logo {
+  padding: 4vh 0;
+}
+
+#div-card-account-info {
+  text-transform: lowercase;
+  font-family: 'Open Sans';
+  font-size: 2vh;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.account-detail-link {
+  font-family: 'Open Sans';
+  font-size: 3vh;
+  color: black;
+}
+
+#container-footer {
+  width: 70vw;
+}
+
+.footer-nav-ul {
+  display: flex;
+  justify-content: space-between;
+}
 
 

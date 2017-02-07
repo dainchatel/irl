@@ -5,34 +5,36 @@
 <title> Home </title>
 
 </head>
- <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 
   <body>
     <% include ../partials/header.ejs %> <!--- using header.ejs page from partials -->
     <main>
     <div id='video-container'>
-      <video id="video" width="640" height="480" autoplay></video>
+      <iframe width='560' height='315' class='center-align' src="<%= user.videoURL %>?rel=0&autoplay=1" frameborder="0" allowfullscreen ></iframe>
+      <h4 class='user-display-text'><%= user.firstName %>, <%= user.age %></h4>
     </div>
-      <div class="collection">
-        <a href="" class="collection-item center"> <p><%= user.username %></p></a> <!--- using dynamic data  from our database to render user information -->
-        <a href="" class="collection-item center"> <p><%= user.firstName %></p></a> <!--- using dynamic data  from our database to render user information -->
-        <a href="" class="collection-item center"><p><%= user.lastName %></p></a>
-        <a href="" class="collection-item center"><p><%= user.email %></p></a>
-        <a href="" class="collection-item center"> <p><%= user.dob %></p></a>
-        <a href="/auth/logout" class="collection-item center">LOG OUT</a> <!--- on click we can logout and redirect to a main page-->
-        <iframe class='center-align' width="560" height="315" src="<%= user.videoURL %>?rel=0&autoplay=1" frameborder="0" allowfullscreen ></iframe>
-      </div>
-      <a href="/user/edit"><button class="btn">Edit</button></a>
-      <a href="<%= '/user/messages/' + user.id %>"><button class="btn">Messages</button></a>
 
-      <button id="snap">Snap Photo</button>
+
+<!--     <div class='container'>
+    <div id='account-info' class='col  offset-s5'>
+        <span class='flow-text'><h5>account details</h5>
+        <p><%= user.username %></p>
+        <p><%= user.firstName %></p>
+        <p><%= user.lastName %></p>
+        <p><%= user.email %></p>
+        <p><%= user.dob %></p></span>
+    </div>
+    </div> -->
+
+
+
+
+ <!--      <button id="snap">Snap Photo</button>
       <button id="snap1" onClick="startVideo()">Start Video</button>
        <button id="snap2" onClick="stopVideo()">Stop Video</button>
       <canvas id="canvas" width="640" height="480"></canvas>
+            <video id="video" width="640" height="480" autoplay></video>
+-->
 
     </main>
      <script src="../javascripts/editUser.js"></script>

@@ -15,10 +15,10 @@ const authHelpers = require('../auth/auth-helpers');
 //   });
 // });
 
-router.get('/home/:id',  authHelpers.getProfiles, (req, res, next)=> {
+router.get('/profiles/:id',  authHelpers.getProfiles, (req, res, next)=> {
 console.log('WHAT IS PROFILES =======   ' + JSON.stringify(res.locals.profiles))
 console.log('WHAT IS REQ.USER.DATAVALUES =======   ' + JSON.stringify(req.user.dataValues))
-
+console.log('HERE IS THE USER ID ====== ' + JSON.stringify(req.user.id))
 // Get user preferences
 models.Preferences.findOne({
   where: { user_id: req.params.id }
@@ -37,17 +37,19 @@ models.Preferences.findOne({
    .then(function(users) {
     console.log('WHERE DA USERS AT +++++ ' + JSON.stringify(users))
     //console.log(arr)
-      res.render('profiles/profiles', {
-        title: 'users',
-        users: users
+    let firstUser = users[0].id;
+
+      // res.render('profiles/profiles/' + firstUser, {
+      //   title: 'users',
+      //   users: users
         // profiles: profiles,
         //profiles: res.user.dataValues
      })
       //console.log('TRYING TO FIND THE AGE  ++++   ' + users)
   })
-  })
+  });
 
- });
+
 
 
 
