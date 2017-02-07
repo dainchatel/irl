@@ -1,19 +1,40 @@
 <% include partials/head.ejs %>
 
-<title> IRL | Home </title>
+<title> C+ME </title>
 
 </head>
   <body>
-    <% include partials/header.ejs %>
-    <main>
+    <div id='splash' class='placeholder'>
+      <% include partials/header.ejs %>
 
-    <div class="collection">
-    <a href="/auth/register" class="collection-item center">Register</a>
-    <a href="/auth/login" class="collection-item center">Log In</a>
-    <a href="/auth/logout" class="collection-item center">Log Out</a>
-  </div>
+    </div>
+
+    <main>
+    <div class='parallax-container'>
+    <div class='parallax'><img src='/images/hiker.jpg'/></div>
+    </div>
+    <div class='center-align' id='expl-wrapper'>
+    <div id='i-wrapper' class='center-align'><i class='medium material-icons'>videocam</i>
+    meet someone 'reel'</div>
+    <div id='i-wrapper'><i class='medium material-icons'>recent_actors</i>
+    make a connection</div>
+    <div id='i-wrapper'><i class='medium material-icons'>my_location</i>
+    bring it to life</div>
+    </div>
+    <div class='parallax-container'>
+    <div class='parallax'><img src='/images/couple.jpg'/></div>
+    </div>
+    <div class='reg-buttons'>
+    <a href="/auth/register" id='reg-button' class='black-text'>Register</a>
+    <a href="/auth/login" id='reg-button-2' class='black-text'>Log In</a>
+    </div>
+    <div class='parallax-container'>
+    <div class='parallax'><img src='/images/shoes.jpg'/></div>
+    </div>
+
 
     </main>
     <% include partials/footer.ejs %> <!--- using footer.ejs page from partials -->
+    <script src='/javascripts/parallax.js'></script>
   </body>
 </html>
