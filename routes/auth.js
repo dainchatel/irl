@@ -4,6 +4,7 @@ const authHelpers = require('../auth/auth-helpers');
 const passport = require('../auth/local');
 const methodOverride = require('method-override');
 const models = require('../db/models/index');
+const moment = require('moment');
 
 router.get('/register', authHelpers.loginRedirect, (req, res) => {
   res.render('auth/register');
@@ -23,12 +24,23 @@ router.post('/register', (req, res, next)  => {
 
 router.put('/register/:id', function(req, res, next) {
   //console.log(req.user.id, req.body.videoURL)
-  models.User.update({
-    videoURL: req.body.videoURL,
-  }, { where: { id: req.params.id } } )
-  .then(function() {
-    res.redirect('/auth/preferences/' + req.params.id);
+  models.User.findOne({
+    where: { id: req.params.id }
   })
+  .then((user) => {
+    console.log('HERE IS USER:+:+:+:+:+: ' + user)
+    console.log('HERE IS DOB:+:+:+:+:+: ' + user.dob)
+    let years = moment().diff(user.dob, 'years')
+    //console.log(`MY YEARS YEARS  +:+:+:+:+: ` + years)
+    // console.log(`MY YEARS AGAIN  +:+:+:+:+: ` + years)
+    models.User.update({
+      age: years,
+      videoURL: req.body.videoURL,
+      }, { where: { id: req.params.id } })
+  .then(function() {
+    res.redirect('/auth/preferences/' + req.params.id)
+  })
+})
 });
 
 // router.get('/userInfo/:id', function(req, res, next) {
