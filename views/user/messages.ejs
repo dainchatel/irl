@@ -15,6 +15,7 @@
     <main>
 <script type="text/javascript">
 function f1(objButton){
+if(objButton === 'undefined') {
   let content = objButton.value;
   let moreContent = objButton.placeholder;
   var x = document.getElementsByClassName("second");
@@ -25,6 +26,10 @@ function f1(objButton){
   var b;
   for (b = 0; b < x.length; b++) {
   z[b].innerHTML = moreContent;}
+    }
+    else {
+      content = ' ';
+    }
  }
 
 function f2(objButton){
