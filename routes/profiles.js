@@ -15,7 +15,7 @@ const authHelpers = require('../auth/auth-helpers');
 //   });
 // });
 
-
+//not using the auth helper currently.
 router.get('/:id',  authHelpers.getProfiles, (req, res, next)=> {
 console.log('WHAT IS PROFILES =======   ' + JSON.stringify(res.locals.profiles))
 console.log('WHAT IS REQ.USER.DATAVALUES =======   ' + JSON.stringify(req.user.dataValues))
@@ -45,10 +45,9 @@ models.Preferences.findOne({
         counter: parseInt(req.params.id)
       })
      })
-      //console.log('TRYING TO FIND THE AGE  ++++   ' + users)
+    })
   })
-  })
-  });
+});
 
 
 
