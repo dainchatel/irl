@@ -15,19 +15,20 @@
             <label class="footer-text black-text">Message:</label>
             <input type="text" name="content"/>
           </div>
-      <button class="btn waves-effect waves-light black" type="submit" name="action">
-    <i class="material-icons tiny">send</i>
-  </button>
+          <button class="btn waves-effect waves-light black" type="submit" name="action">
+          <i class="material-icons tiny">send</i>
+          </button>
 
         </form>
- <iframe class='center-align' width="560" height="315" src="<%= user.videoURL %>?rel=0&autoplay=1" frameborder="0" allowfullscreen ></iframe>
-
-
-      <video id="video" width="640" height="480" autoplay></video>
-      <button id="snap">Snap Photo</button>
-      <button id="snap1" onClick="startVideo()">Start Video</button>
-       <button id="snap2" onClick="stopVideo()">Stop Video</button>
-      <canvas id="canvas" width="640" height="480"></canvas>
+    <div class="col s12">
+      <button class="btn black" id="snap1" onClick="startVideo()">Start Video</button>
+      <button class="btn black" id="snap2" onClick="stopVideo()">Stop Video</button>
+      <button class="btn black" id="snap">Snap Photo</button>
+    </div>
+      <div class="row">
+      <video  class="col s6 center" id="video" width="640" height="480" autoplay></video>
+      <canvas  class="col s6 center" id="canvas" width="640" height="480"></canvas>
+      </div>
 
 
       </div>
