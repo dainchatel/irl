@@ -1,3 +1,5 @@
+
+
 a {
   font-family: 'Poppins'; }
 
@@ -78,8 +80,6 @@ a {
   font-size: 3vh;
   color: black; }
 
-#container-footer {
-  width: 70vw; }
 
 .footer-nav-ul {
   display: flex;
@@ -141,3 +141,4 @@ h5 {
   color: black; }
 
 /*# sourceMappingURL=style.css.map */
+>>>>>>> 33cd1c4eadef8f185b26bb259c1ee0da5c221ab6

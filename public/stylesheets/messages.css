@@ -305,7 +305,6 @@ emoji.funny{background-image: url(http://i.imgur.com/qKia58V.png);}
 /* T Y P E */
 
 input.textarea {
-    position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
@@ -320,11 +319,12 @@ input.textarea {
     color: #666;
     font-weight: 400;
      font-family: 'Open Sans';
+     position: relative;
 }
+
 .emojis {
-    position: fixed;
     display: block;
-    bottom: 8px;
+    bottom: 10px;
     left: 7px;
     width: 34px;
     height: 34px;
@@ -339,6 +339,7 @@ input.textarea {
 }
 
 .messageButtons {
+
     background-color: transparent;
     margin-top: 0.1em;
     border:  none;
@@ -354,10 +355,9 @@ input.textarea {
     color: #666;
     font-weight: 400;
      font-family: 'Open Sans';
-
-
-
 }
+
+
 
 
 
