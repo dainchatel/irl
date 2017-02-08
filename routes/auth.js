@@ -23,24 +23,30 @@ router.post('/register', (req, res, next)  => {
 });
 
 router.put('/register/:id', function(req, res, next) {
-  //console.log(req.user.id, req.body.videoURL)
-  models.User.findOne({
-    where: { id: req.params.id }
-  })
-  .then((user) => {
-    console.log('HERE IS USER:+:+:+:+:+: ' + user)
-    console.log('HERE IS DOB:+:+:+:+:+: ' + user.dob)
-    let years = moment().diff(user.dob, 'years')
-    //console.log(`MY YEARS YEARS  +:+:+:+:+: ` + years)
-    // console.log(`MY YEARS AGAIN  +:+:+:+:+: ` + years)
-    models.User.update({
-      age: years,
-      videoURL: req.body.videoURL,
-      }, { where: { id: req.params.id } })
-  .then(function() {
-    res.redirect('/auth/preferences/' + req.params.id)
-  })
-})
+ //console.log(req.user.id, req.body.videoURL)
+ models.User.findOne({
+   where: { id: req.params.id }
+ })
+ .then((user) => {
+   console.log('HERE IS USER:+:+:+:+:+: ' + user)
+   console.log('HERE IS DOB:+:+:+:+:+: ' + user.dob)
+   let years = moment().diff(user.dob, 'years')
+   //console.log(`MY YEARS YEARS  +:+:+:+:+: ` + years)
+   // console.log(`MY YEARS AGAIN  +:+:+:+:+: ` + years)
+   models.User.update({
+     age: years,
+     videoURL: req.body.videoURL,
+     }, { where: { id: req.params.id } })
+ .then(function() {
+models.Messages.create({
+   toUser: req.params.id,
+   fromUser: req.user.id,
+   content: "Welcome to C+ME!",
+ }).then(function() {
+   res.redirect('/auth/preferences/' + req.params.id)
+     })
+   })
+ })
 });
 
 // router.get('/userInfo/:id', function(req, res, next) {

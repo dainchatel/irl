@@ -6,17 +6,21 @@
     <main class="container">
       <div class="row">
         <h4>Let's get started!</h4>
-          <li>You'll need an 11 second video</li>
-          <li>Make sure there is good lighting in the room</li>
-          <li>Be centered in the video. No Angles.</li>
-          <li>Most important. Be yourself!</li>
-          <li>Upload an HD video from YouTube or Vimeo</li>
+          <h6>You'll need an 11 second video</h6>
+          <h6>Make sure the lighting is good, and that your face is centered in the frame</h6>
+          <h6>Not sure what to say? Answer one of these questions:</h6><br/><br/>
+          <li>Would you rather fight one horse-sized duck or 100 duck-sized horses?</li>
+          <li>Have you done anything lately worth remembering?</li>
+          <li>What is another word for thesaurus?</li>
+          <li>What do they use to ship styrofoam?</li>
+          <li>Is there one celebrity you would punch in the face? Why?</h6><br/><br/>
+          <h6>Link us to your video on YouTube or Vimeo. Make sure to go to 'Share' and use the 'embed' link.</h6>
+          <h6>Without quotation marks!</h6>
           <form action="<%= '/auth/register/' + user.id + '?_method=PUT' %>" method="POST">
-            <input type="text" name="videoURL" placeholder="https://youtube.com/your-video-link" />
+            <input type="text" name="videoURL" placeholder="https://youtube.com/embed/your-video-link" />
             <button class="btn black" type='submit'>submit</button>
           </form>
       </div>
     </main>
-    <% include ../partials/footer.ejs %> <!--- using footer.ejs page from partials -->
   </body>
 </html>
