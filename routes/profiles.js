@@ -19,7 +19,6 @@ const authHelpers = require('../auth/auth-helpers');
 router.get('/:id',  authHelpers.getProfiles, (req, res, next)=> {
 console.log('WHAT IS PROFILES =======   ' + JSON.stringify(res.locals.profiles))
 console.log('WHAT IS REQ.USER.DATAVALUES =======   ' + JSON.stringify(req.user.dataValues))
-
 // Get user preferences
 models.Preferences.findOne({
   where: { user_id: req.user.dataValues.id }
@@ -47,36 +46,8 @@ models.Preferences.findOne({
      })
       //console.log('TRYING TO FIND THE AGE  ++++   ' + users)
   })
-  });
+  })
 
-
-
-
-
-// router.get('/messages/:id',  authHelpers.getMessages, (req, res, next)=> {
-//  models.Messages.findAll({
-// order: [
-//   ['toUser', 'DESC'],
-//  ],
-//  where: {
-//  fromUser: {$eq: req.params.id},
-//  }
-//  }).then(function(messages, username) {
-//    res.render('user/messages', {
-//       content: 'content',
-//        messages: messages,
-//        fromUser: 'fromUser',
-//        toUser: 'toUser',
-//      username: req.user.dataValues
-//    });
-//  });
-// });
-
-// router.get('/:id', function(req, res, next) {
-//   models.User.findById(req.params.id).then(function(user) {
-//     res.render('profiles/profile', { user: user });
-//   });
-// });
-
+ });
  module.exports = router;
 
