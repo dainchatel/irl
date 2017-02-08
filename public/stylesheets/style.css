@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 Error: Invalid CSS after "}": expected "}", was ""
         on line 176 of style.scss
@@ -34,3 +35,148 @@ body:before {
   white-space: pre;
   font-family: monospace;
   content: "Error: Invalid CSS after \"}\": expected \"}\", was \"\"\A         on line 176 of style.scss\A \A 171: \A 172: .carot {\A 173:   font-size: 60px;\A 174:   color:black;\A 175: }"; }
+=======
+a {
+  font-family: 'Poppins'; }
+
+.page-footer {
+  background-color: black; }
+
+.head-text {
+  color: black;
+  font-weight: 700;
+  border: 10px solid black;
+  padding: 0 2vw; }
+
+#splash {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+#expl-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans'; }
+
+#i-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2vh;
+  width: 35vw;
+  height: 25vh; }
+
+.reg-buttons {
+  height: 25vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: black; }
+
+#reg-button, #reg-button-2 {
+  font-family: 'Open Sans';
+  font-size: 4vh;
+  text-transform: lowercase; }
+
+.parallax-container {
+  height: 60vh;
+  background-size: contain; }
+
+.footer-text {
+  font-family: 'Open Sans';
+  text-transform: lowercase; }
+
+#video-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+
+.user-display-text {
+  font-family: 'Poppins';
+  font-weight: 700; }
+
+#main-logo {
+  padding: 4vh 0; }
+
+#div-card-account-info {
+  text-transform: lowercase;
+  font-family: 'Open Sans';
+  font-size: 2vh;
+  color: black;
+  display: flex;
+  justify-content: center; }
+
+.account-detail-link {
+  font-family: 'Open Sans';
+  font-size: 3vh;
+  color: black; }
+
+#container-footer {
+  width: 70vw; }
+
+.footer-nav-ul {
+  display: flex;
+  justify-content: space-around; }
+
+.form {
+  margin-top: 30px; }
+
+#form-font {
+  font-family: 'Open Sans';
+  text-transform: lowercase; }
+
+p {
+  font-family: 'Open Sans';
+  text-transform: lowercase;
+  color: black; }
+  p input {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+  p label {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+
+.register {
+  font-family: 'Open Sans';
+  text-transform: lowercase;
+  color: black; }
+  .register input {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+  .register label {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+
+h5 {
+  font-family: 'Open Sans';
+  text-transform: lowercase;
+  color: black; }
+  h5 select {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+  h5 option {
+    font-family: 'Open Sans';
+    text-transform: lowercase;
+    color: black; }
+
+.profile-holder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.carot {
+  font-size: 60px;
+  color: black; }
+
+/*# sourceMappingURL=style.css.map */
+>>>>>>> 33cd1c4eadef8f185b26bb259c1ee0da5c221ab6
