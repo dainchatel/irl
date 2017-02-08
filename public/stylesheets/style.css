@@ -131,12 +131,6 @@ h5 {
     text-transform: lowercase;
     color: black; }
 
-#radio {
-  color: black;
-  background-color: black;
-  border: solid black;
-  content: black; }
-
 .profile-holder {
   display: flex;
   justify-content: space-around;
