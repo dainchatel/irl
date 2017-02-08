@@ -21,8 +21,6 @@ const session = require('express-session');
 const authRoutes = require('./routes/auth.js');
 const userRoutes = require('./routes/user.js');
 
-var cors = require('cors')
-
 var app = express();
 require('dotenv').config();
 app.use(methodOverride('_method'));
@@ -34,7 +32,6 @@ app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
